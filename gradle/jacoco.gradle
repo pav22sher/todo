@@ -8,8 +8,4 @@ buildscript {
     }
 }
 
-apply plugin: org.ajoberstar.gradle.jacoco.plugins.JacocoPlugin
-
-jacoco {
-    integrationTestTaskName = 'integrationTest'
-}
+apply plugin: 'jacoco'

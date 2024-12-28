@@ -1,13 +1,5 @@
 apply from: "$rootDir/gradle/envConfig.gradle"
 apply from: "$rootDir/gradle/versioning.gradle"
-apply plugin: 'sonar-runner'
-
-sonarRunner {
-    sonarProperties {
-        property 'sonar.projectName', 'todo'
-        property 'sonar.projectDescription', 'A task management application'
-    }
-}
 
 allprojects {
     apply plugin: 'idea'
@@ -28,12 +20,6 @@ subprojects {
 
     test {
         reports.junitXml.destination = file("$reports.junitXml.destination/unit")
-    }
-
-    sonarRunner {
-        sonarProperties {
-            property 'sonar.sourceEncoding', 'UTF-8'
-        }
     }
 }
 
