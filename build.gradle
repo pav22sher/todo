@@ -1,5 +1,4 @@
 apply from: "$rootDir/gradle/envConfig.gradle"
-apply from: "$rootDir/gradle/versioning.gradle"
 
 allprojects {
     apply plugin: 'idea'
@@ -13,12 +12,4 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply from: "$rootDir/gradle/jacoco.gradle"
-
-    test {
-        reports.junitXml.destination = file("$reports.junitXml.destination/unit")
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
 }
